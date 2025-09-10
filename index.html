@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPSD 204 School Calendar 2025-2026</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="calendar-header">
+            <h1>IPSD 204 School Calendar</h1>
+            <p class="school-year">2025-2026 School Year</p>
+        </header>
+
+        <div class="calendar-controls">
+            <button class="btn btn--secondary" id="prevMonth">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+                Previous
+            </button>
+            
+            <div class="current-month-year">
+                <h2 id="currentMonthYear">August 2025</h2>
+            </div>
+            
+            <button class="btn btn--secondary" id="nextMonth">
+                Next
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+            </button>
+        </div>
+
+        <div class="legend">
+            <h3>Legend</h3>
+            <div class="legend-items">
+                <div class="legend-item">
+                    <div class="legend-color school-break"></div>
+                    <span>School Breaks / No School</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color federal-holiday"></div>
+                    <span>Federal Holidays</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color school-event"></div>
+                    <span>School Events</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color school-milestone"></div>
+                    <span>School Milestones</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color academic-milestone"></div>
+                    <span>Academic Milestones</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="calendar-container">
+            <div class="calendar-grid">
+                <div class="day-header">Sun</div>
+                <div class="day-header">Mon</div>
+                <div class="day-header">Tue</div>
+                <div class="day-header">Wed</div>
+                <div class="day-header">Thu</div>
+                <div class="day-header">Fri</div>
+                <div class="day-header">Sat</div>
+                <div id="calendarDays"></div>
+            </div>
+        </div>
+
+        <!-- Event details modal -->
+        <div class="modal hidden" id="eventModal">
+            <div class="modal-overlay" id="modalOverlay"></div>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 id="modalDate">Event Details</h3>
+                    <button class="modal-close" id="modalClose">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="18" y1="6" x2="6" y2="18"></line>
+                            <line x1="6" y1="6" x2="18" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="modalEvents"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
