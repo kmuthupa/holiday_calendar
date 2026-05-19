@@ -1,8 +1,6 @@
 {
   "version": 2,
-  "name": "holiday-calendar",
-  "cleanUrls": true,
-  "framework": null,
-  "installCommand": "echo 'No install needed'",
-  "buildCommand": "echo 'No build needed'"
+  "builds": [
+    { "src": "**", "use": "@vercel/static" }
+  ]
 }
