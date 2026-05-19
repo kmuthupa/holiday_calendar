@@ -1,399 +1,217 @@
-// Calendar data and state
+// IPSD 204 School Calendar - Official Dates (2025-2026 and 2026-2027)
 const calendarData = {
   "schoolEvents": {
-    "2026-08-17": {"type": "school_start", "description": "First Day of School", "color": "green"},
-    "2026-09-07": {"type": "school_break", "description": "Labor Day - NO SCHOOL", "color": "red"},
-    "2026-10-12": {"type": "school_break", "description": "Columbus Day/Indigenous Peoples' Day - NO SCHOOL", "color": "red"},
-    "2026-10-22": {"type": "conference", "description": "Parent/Teacher Conferences (4:30 PM - 8:00 PM)", "color": "orange"},
-    "2026-10-23": {"type": "school_break", "description": "Institute Day - NO SCHOOL", "color": "red"},
-    "2026-11-02": {"type": "conference", "description": "Parent/Teacher Conferences (8:00 AM - 8:00 PM) - NO SCHOOL", "color": "red"},
-    "2026-11-23": {"type": "school_break", "description": "Thanksgiving Break - NO SCHOOL", "color": "red"},
-    "2026-11-24": {"type": "school_break", "description": "Thanksgiving Break - NO SCHOOL", "color": "red"},
-    "2026-11-25": {"type": "school_break", "description": "Thanksgiving Break - NO SCHOOL", "color": "red"},
-    "2026-11-26": {"type": "school_break", "description": "Thanksgiving Break - NO SCHOOL", "color": "red"},
-    "2026-11-27": {"type": "school_break", "description": "Thanksgiving Break - NO SCHOOL", "color": "red"},
-    "2026-12-21": {"type": "school_break", "description": "Winter Break - NO SCHOOL", "color": "red"},
-    "2026-12-22": {"type": "school_break", "description": "Winter Break - NO SCHOOL", "color": "red"},
-    "2026-12-23": {"type": "school_break", "description": "Winter Break - NO SCHOOL", "color": "red"},
-    "2026-12-24": {"type": "school_break", "description": "Winter Break - NO SCHOOL", "color": "red"},
-    "2026-12-25": {"type": "school_break", "description": "Winter Break - NO SCHOOL", "color": "red"},
-    "2026-12-28": {"type": "school_break", "description": "Winter Break - NO SCHOOL", "color": "red"},
-    "2026-12-29": {"type": "school_break", "description": "Winter Break - NO SCHOOL", "color": "red"},
-    "2026-12-30": {"type": "school_break", "description": "Winter Break - NO SCHOOL", "color": "red"},
-    "2026-12-31": {"type": "school_break", "description": "Winter Break - NO SCHOOL", "color": "red"},
-    "2027-01-01": {"type": "school_break", "description": "Winter Break - NO SCHOOL", "color": "red"},
-    "2027-01-04": {"type": "school_break", "description": "Winter Break - NO SCHOOL", "color": "red"},
-    "2027-01-05": {"type": "school_resume", "description": "School Resumes", "color": "green"},
-    "2027-01-15": {"type": "semester", "description": "End of First Semester", "color": "yellow"},
-    "2027-01-18": {"type": "school_break", "description": "Martin Luther King, Jr. Day - NO SCHOOL", "color": "red"},
-    "2027-01-19": {"type": "school_break", "description": "SIP/Teacher Work Day - NO SCHOOL", "color": "red"},
-    "2027-02-15": {"type": "school_break", "description": "Presidents' Day - NO SCHOOL", "color": "red"},
-    "2027-02-26": {"type": "school_break", "description": "Institute Day - NO SCHOOL", "color": "red"},
-    "2027-03-15": {"type": "conference", "description": "Parent/Teacher Conferences (12:00 PM - 7:00 PM) - NO SCHOOL", "color": "red"},
-    "2027-03-16": {"type": "elearning", "description": "e-Learning Election Day", "color": "orange"},
-    "2027-03-26": {"type": "school_break", "description": "Spring Break - NO SCHOOL", "color": "red"},
-    "2027-03-29": {"type": "school_break", "description": "Spring Break - NO SCHOOL", "color": "red"},
-    "2027-03-30": {"type": "school_break", "description": "Spring Break - NO SCHOOL", "color": "red"},
-    "2027-03-31": {"type": "school_break", "description": "Spring Break - NO SCHOOL", "color": "red"},
-    "2027-04-01": {"type": "school_break", "description": "Spring Break - NO SCHOOL", "color": "red"},
-    "2027-04-02": {"type": "school_break", "description": "Spring Break - NO SCHOOL", "color": "red"},
-    "2027-04-05": {"type": "school_break", "description": "Spring Break - NO SCHOOL", "color": "red"},
-    "2027-04-06": {"type": "school_break", "description": "Spring Break - NO SCHOOL", "color": "red"},
-    "2027-04-07": {"type": "school_break", "description": "SIP Day - NO SCHOOL", "color": "red"},
-    "2027-05-28": {"type": "school_end", "description": "Last Day of School", "color": "yellow"}
-  },
-  "federalHolidays": {
-    "2026-01-01": {"type": "federal_holiday", "description": "New Year's Day", "color": "blue"},
-    "2026-07-03": {"type": "federal_holiday", "description": "Independence Day (Observed)", "color": "blue"},
-    "2026-09-07": {"type": "federal_holiday", "description": "Labor Day", "color": "blue"},
-    "2026-10-12": {"type": "federal_holiday", "description": "Columbus Day", "color": "blue"},
-    "2026-11-11": {"type": "federal_holiday", "description": "Veterans Day", "color": "blue"},
-    "2026-11-26": {"type": "federal_holiday", "description": "Thanksgiving Day", "color": "blue"},
-    "2026-12-25": {"type": "federal_holiday", "description": "Christmas Day", "color": "blue"},
-    "2027-01-01": {"type": "federal_holiday", "description": "New Year's Day", "color": "blue"},
-    "2027-01-18": {"type": "federal_holiday", "description": "Martin Luther King Jr. Day", "color": "blue"},
-    "2027-02-15": {"type": "federal_holiday", "description": "Presidents' Day", "color": "blue"},
-    "2027-05-31": {"type": "federal_holiday", "description": "Memorial Day", "color": "blue"},
-    "2027-06-18": {"type": "federal_holiday", "description": "Juneteenth National Independence Day (Observed)", "color": "blue"},
-    "2027-07-05": {"type": "federal_holiday", "description": "Independence Day (Observed)", "color": "blue"},
-    "2027-09-06": {"type": "federal_holiday", "description": "Labor Day", "color": "blue"},
-    "2027-10-11": {"type": "federal_holiday", "description": "Columbus Day", "color": "blue"},
-    "2027-11-11": {"type": "federal_holiday", "description": "Veterans Day", "color": "blue"},
-    "2027-11-25": {"type": "federal_holiday", "description": "Thanksgiving Day", "color": "blue"},
-    "2027-12-24": {"type": "federal_holiday", "description": "Christmas Day (Observed)", "color": "blue"}
+    // Current Year Remainder (2025-2026)
+    "2026-05-25": {"type": "school_break", "description": "Memorial Day - NO SCHOOL"},
+    "2026-05-28": {"type": "school_end", "description": "Last Day of School (Tentative)"},
+    "2026-05-29": {"type": "school_break", "description": "Teacher Work Day - NO SCHOOL"},
+    "2026-06-19": {"type": "school_break", "description": "Juneteenth - NO SCHOOL"},
+    "2026-07-03": {"type": "school_break", "description": "Independence Day (Observed) - NO SCHOOL"},
+    
+    // Next Year (2026-2027)
+    "2026-08-17": {"type": "school_start", "description": "First Day of School"},
+    "2026-09-07": {"type": "school_break", "description": "Labor Day - NO SCHOOL"},
+    "2026-10-12": {"type": "school_break", "description": "Columbus Day / Indigenous Peoples' Day - NO SCHOOL"},
+    "2026-10-22": {"type": "event", "description": "Parent/Teacher Conferences (4:30 PM - 8:00 PM)"},
+    "2026-10-23": {"type": "school_break", "description": "Institute Day - NO SCHOOL"},
+    "2026-11-02": {"type": "school_break", "description": "Parent/Teacher Conferences - NO SCHOOL"},
+    "2026-11-03": {"type": "school_break", "description": "Election Day - NO SCHOOL"},
+    "2026-11-11": {"type": "school_break", "description": "Veterans Day - NO SCHOOL"},
+    "2026-11-23": {"type": "school_break", "description": "Thanksgiving Break - NO SCHOOL"},
+    "2026-11-24": {"type": "school_break", "description": "Thanksgiving Break - NO SCHOOL"},
+    "2026-11-25": {"type": "school_break", "description": "Thanksgiving Break - NO SCHOOL"},
+    "2026-11-26": {"type": "school_break", "description": "Thanksgiving Day - NO SCHOOL"},
+    "2026-11-27": {"type": "school_break", "description": "Thanksgiving Break - NO SCHOOL"},
+    "2026-12-21": {"type": "school_break", "description": "Winter Break - NO SCHOOL"},
+    "2026-12-22": {"type": "school_break", "description": "Winter Break - NO SCHOOL"},
+    "2026-12-23": {"type": "school_break", "description": "Winter Break - NO SCHOOL"},
+    "2026-12-24": {"type": "school_break", "description": "Winter Break - NO SCHOOL"},
+    "2026-12-25": {"type": "school_break", "description": "Christmas Day - NO SCHOOL"},
+    "2026-12-28": {"type": "school_break", "description": "Winter Break - NO SCHOOL"},
+    "2026-12-29": {"type": "school_break", "description": "Winter Break - NO SCHOOL"},
+    "2026-12-30": {"type": "school_break", "description": "Winter Break - NO SCHOOL"},
+    "2026-12-31": {"type": "school_break", "description": "Winter Break - NO SCHOOL"},
+    "2027-01-01": {"type": "school_break", "description": "New Year's Day - NO SCHOOL"},
+    "2027-01-04": {"type": "school_break", "description": "Winter Break - NO SCHOOL"},
+    "2027-01-18": {"type": "school_break", "description": "Martin Luther King, Jr. Day - NO SCHOOL"},
+    "2027-01-19": {"type": "school_break", "description": "SIP/Teacher Work Day - NO SCHOOL"},
+    "2027-02-15": {"type": "school_break", "description": "Presidents' Day - NO SCHOOL"},
+    "2027-02-26": {"type": "school_break", "description": "Institute Day - NO SCHOOL"},
+    "2027-03-15": {"type": "school_break", "description": "Parent/Teacher Conferences - NO SCHOOL"},
+    "2027-03-26": {"type": "school_break", "description": "Spring Break - NO SCHOOL"},
+    "2027-03-29": {"type": "school_break", "description": "Spring Break - NO SCHOOL"},
+    "2027-03-30": {"type": "school_break", "description": "Spring Break - NO SCHOOL"},
+    "2027-03-31": {"type": "school_break", "description": "Spring Break - NO SCHOOL"},
+    "2027-04-01": {"type": "school_break", "description": "Spring Break - NO SCHOOL"},
+    "2027-04-02": {"type": "school_break", "description": "Spring Break - NO SCHOOL"},
+    "2027-04-05": {"type": "school_break", "description": "Spring Break - NO SCHOOL"},
+    "2027-04-06": {"type": "school_break", "description": "Spring Break - NO SCHOOL"},
+    "2027-04-07": {"type": "school_break", "description": "SIP Day - NO SCHOOL"},
+    "2027-05-28": {"type": "school_end", "description": "Last Day of School"},
+    "2027-05-31": {"type": "school_break", "description": "Memorial Day - NO SCHOOL"},
+    "2027-06-18": {"type": "school_break", "description": "Juneteenth (Observed) - NO SCHOOL"},
+    "2027-07-05": {"type": "school_break", "description": "Independence Day (Observed) - NO SCHOOL"}
   }
 };
 
-// Calendar state
-let currentMonth = 7; // August (0-indexed)
-let currentYear = 2026;
+// State
+const now = new Date();
+let currentMonth = now.getMonth();
+let currentYear = now.getFullYear();
+let isPlanningMode = false;
+let personalTrips = JSON.parse(localStorage.getItem('personalTrips')) || [];
 
-// Utility functions
-function formatDate(date) {
-    const year = date.getFullYear();
-    const month = String(date.getMonth() + 1).padStart(2, '0');
-    const day = String(date.getDate()).padStart(2, '0');
+// Helpers
+const formatDate = (d) => {
+    const year = d.getFullYear();
+    const month = String(d.getMonth() + 1).padStart(2, '0');
+    const day = String(d.getDate()).padStart(2, '0');
     return `${year}-${month}-${day}`;
-}
+};
+const getMonthName = (m) => ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'][m];
 
-function getMonthName(month) {
-    const months = [
-        'January', 'February', 'March', 'April', 'May', 'June',
-        'July', 'August', 'September', 'October', 'November', 'December'
-    ];
-    return months[month];
-}
-
-// Event processing functions
-function mergeEvents() {
-    const mergedEvents = {};
-    
-    // Add school events (highest priority)
-    for (const [date, event] of Object.entries(calendarData.schoolEvents)) {
-        if (!mergedEvents[date]) {
-            mergedEvents[date] = [];
-        }
-        mergedEvents[date].push({
-            ...event,
-            priority: getPriority(event.type),
-            cssClass: getCssClass(event.type, event.color)
-        });
-    }
-    
-    // Add federal holidays (lower priority, only if no school event exists)
-    for (const [date, event] of Object.entries(calendarData.federalHolidays)) {
-        if (!mergedEvents[date]) {
-            mergedEvents[date] = [];
-        }
-        // Only add federal holiday if no school break exists for this date
-        const hasSchoolBreak = mergedEvents[date].some(e => e.type === 'school_break');
-        if (!hasSchoolBreak) {
-            mergedEvents[date].push({
-                ...event,
-                priority: getPriority(event.type),
-                cssClass: getCssClass(event.type, event.color)
-            });
-        }
-    }
-    
-    // Sort events by priority (higher priority first)
-    for (const date in mergedEvents) {
-        mergedEvents[date].sort((a, b) => b.priority - a.priority);
-    }
-    
-    return mergedEvents;
-}
-
-function getPriority(type) {
-    const priorities = {
-        'school_break': 10,
-        'conference': 9,
-        'elearning': 8,
-        'school_start': 7,
-        'school_resume': 7,
-        'school_end': 6,
-        'semester': 5,
-        'federal_holiday': 3
-    };
-    return priorities[type] || 1;
-}
-
-function getCssClass(type, color) {
-    if (type === 'school_break' || color === 'red') {
-        return 'school-break';
-    } else if (type === 'federal_holiday' || color === 'blue') {
-        return 'federal-holiday';
-    } else if (color === 'orange') {
-        return 'school-event';
-    } else if (color === 'green') {
-        return 'school-milestone';
-    } else if (color === 'yellow') {
-        return 'academic-milestone';
-    }
-    return 'federal-holiday';
-}
-
-// Calendar rendering functions
 function renderCalendar() {
-    const events = mergeEvents();
-    const calendarDays = document.getElementById('calendarDays');
-    const monthYearElement = document.getElementById('currentMonthYear');
-    
-    if (!calendarDays || !monthYearElement) {
-        console.error('Calendar elements not found');
-        return;
-    }
-    
-    // Update header
-    monthYearElement.textContent = `${getMonthName(currentMonth)} ${currentYear}`;
-    
-    // Clear calendar
-    calendarDays.innerHTML = '';
-    
-    // Get first day of month
+    const daysContainer = document.getElementById('calendarDays');
+    const header = document.getElementById('currentMonthYear');
+    if (!daysContainer || !header) return;
+
+    header.textContent = `${getMonthName(currentMonth)} ${currentYear}`;
+    daysContainer.innerHTML = '';
+
     const firstDay = new Date(currentYear, currentMonth, 1);
-    const startDate = new Date(firstDay);
-    startDate.setDate(startDate.getDate() - firstDay.getDay());
-    
-    // Generate 42 days (6 weeks)
+    const start = new Date(firstDay);
+    start.setDate(start.getDate() - firstDay.getDay());
+
     for (let i = 0; i < 42; i++) {
-        const date = new Date(startDate);
-        date.setDate(startDate.getDate() + i);
-        
-        const dayCell = createDayCell(date, events);
-        calendarDays.appendChild(dayCell);
+        const date = new Date(start);
+        date.setDate(start.getDate() + i);
+        daysContainer.appendChild(createDayCell(date));
     }
+    updateCountdown();
 }
 
-function createDayCell(date, events) {
-    const dayCell = document.createElement('div');
-    dayCell.className = 'day-cell';
-    
+function createDayCell(date) {
+    const cell = document.createElement('div');
+    cell.className = 'day-cell';
+    const dateStr = formatDate(date);
     const isCurrentMonth = date.getMonth() === currentMonth;
-    const dateString = formatDate(date);
-    const dayEvents = events[dateString] || [];
+    const event = calendarData.schoolEvents[dateStr];
     
-    if (!isCurrentMonth) {
-        dayCell.classList.add('other-month');
+    // Check if it's today
+    const today = new Date();
+    today.setHours(0,0,0,0);
+    const isToday = date.getTime() === today.getTime();
+    
+    if (!isCurrentMonth) cell.classList.add('other-month');
+    if (isToday) cell.classList.add('today');
+    
+    // Logic for visual cues: ANY event with "NO SCHOOL" gets the Red break color
+    const isBreak = event && (event.type === 'school_break' || event.description.includes('NO SCHOOL'));
+    const isLW = isPartOfLongWeekend(date);
+    
+    if (isBreak) cell.classList.add('school-break');
+    if (isLW && !isBreak) cell.classList.add('long-weekend');
+    
+    // Connection logic for breaks
+    if (isBreak) {
+        const prev = new Date(date); prev.setDate(prev.getDate() - 1);
+        const next = new Date(date); next.setDate(next.getDate() + 1);
+        const prevStr = formatDate(prev);
+        const nextStr = formatDate(next);
+        
+        const hasPrev = calendarData.schoolEvents[prevStr] && (calendarData.schoolEvents[prevStr].type === 'school_break' || calendarData.schoolEvents[prevStr].description.includes('NO SCHOOL'));
+        const hasNext = calendarData.schoolEvents[nextStr] && (calendarData.schoolEvents[nextStr].type === 'school_break' || calendarData.schoolEvents[nextStr].description.includes('NO SCHOOL'));
+        
+        if (!hasPrev) cell.classList.add('break-start');
+        if (!hasNext) cell.classList.add('break-end');
     }
+
+    if (personalTrips.includes(dateStr)) cell.classList.add('personal-trip');
+
+    cell.innerHTML = `<span class="day-number">${date.getDate()}</span>`;
     
-    if (dayEvents.length > 0) {
-        dayCell.classList.add('has-events');
-        // Use the highest priority event's class for background
-        dayCell.classList.add(dayEvents[0].cssClass);
-    }
-    
-    // Day number
-    const dayNumber = document.createElement('div');
-    dayNumber.className = 'day-number';
-    dayNumber.textContent = date.getDate();
-    dayCell.appendChild(dayNumber);
-    
-    // Event indicators
-    if (dayEvents.length > 0) {
-        const eventIndicators = document.createElement('div');
-        eventIndicators.className = 'event-indicators';
-        
-        // Show up to 3 event dots
-        for (let i = 0; i < Math.min(dayEvents.length, 3); i++) {
-            const eventDot = document.createElement('div');
-            eventDot.className = `event-dot ${dayEvents[i].cssClass}`;
-            eventIndicators.appendChild(eventDot);
+    cell.onclick = () => {
+        if (isPlanningMode) {
+            const idx = personalTrips.indexOf(dateStr);
+            if (idx === -1) personalTrips.push(dateStr);
+            else personalTrips.splice(idx, 1);
+            localStorage.setItem('personalTrips', JSON.stringify(personalTrips));
+            renderCalendar();
+        } else if (event) {
+            showModal(date, event);
         }
-        
-        if (dayEvents.length > 3) {
-            const moreDot = document.createElement('div');
-            moreDot.className = 'event-dot';
-            moreDot.style.backgroundColor = 'var(--color-text-secondary)';
-            moreDot.style.fontSize = '6px';
-            moreDot.style.textAlign = 'center';
-            moreDot.style.lineHeight = '8px';
-            moreDot.textContent = '+';
-            eventIndicators.appendChild(moreDot);
-        }
-        
-        dayCell.appendChild(eventIndicators);
-        
-        // Event preview (only show first event description on larger screens)
-        if (isCurrentMonth && dayEvents.length > 0) {
-            const eventPreview = document.createElement('div');
-            eventPreview.className = 'event-preview';
-            eventPreview.textContent = dayEvents[0].description;
-            dayCell.appendChild(eventPreview);
-        }
-        
-        // Add click handler for events
-        dayCell.style.cursor = 'pointer';
-        dayCell.onclick = function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            showEventModal(date, dayEvents);
-        };
-    }
-    
-    return dayCell;
+    };
+    return cell;
 }
 
-// Modal functions
-function showEventModal(date, events) {
-    const modal = document.getElementById('eventModal');
-    const modalDate = document.getElementById('modalDate');
-    const modalEvents = document.getElementById('modalEvents');
+function isPartOfLongWeekend(date) {
+    const checkOff = (d) => {
+        const s = formatDate(d);
+        const e = calendarData.schoolEvents[s];
+        const day = d.getDay();
+        const isDistrictBreak = e && (e.type === 'school_break' || e.description.includes('NO SCHOOL'));
+        return (day === 0 || day === 6 || isDistrictBreak);
+    };
+
+    if (!checkOff(date)) return false;
+
+    let count = 1;
+    let d = new Date(date);
+    while (true) { d.setDate(d.getDate() - 1); if (checkOff(d)) count++; else break; }
+    d = new Date(date);
+    while (true) { d.setDate(d.getDate() + 1); if (checkOff(d)) count++; else break; }
     
-    if (!modal || !modalDate || !modalEvents) {
-        console.error('Modal elements not found');
-        return;
+    return count >= 3;
+}
+
+function updateCountdown() {
+    const text = document.getElementById('nextBreakText');
+    if (!text) return;
+
+    const today = new Date();
+    today.setHours(0,0,0,0);
+
+    const future = Object.keys(calendarData.schoolEvents)
+        .filter(d => new Date(d + 'T00:00:00') >= today && (calendarData.schoolEvents[d].type === 'school_break' || calendarData.schoolEvents[d].description.includes('NO SCHOOL')))
+        .sort();
+
+    if (future.length > 0) {
+        const next = new Date(future[0] + 'T00:00:00');
+        const diff = Math.ceil((next - today) / (1000 * 60 * 60 * 24));
+        const event = calendarData.schoolEvents[future[0]];
+        text.textContent = diff === 0 ? `Today is ${event.description.replace(' - NO SCHOOL', '')}!` : `${diff} days until ${event.description.replace(' - NO SCHOOL', '')}`;
+    } else {
+        text.textContent = "No more breaks scheduled.";
     }
-    
-    // Format date for modal title
-    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-    modalDate.textContent = date.toLocaleDateString('en-US', options);
-    
-    // Clear and populate events
-    modalEvents.innerHTML = '';
-    
-    events.forEach(event => {
-        const eventDetail = document.createElement('div');
-        eventDetail.className = 'event-detail';
-        
-        const eventDot = document.createElement('div');
-        eventDot.className = `event-detail-dot ${event.cssClass}`;
-        
-        const eventContent = document.createElement('div');
-        eventContent.className = 'event-detail-content';
-        
-        const eventTitle = document.createElement('h4');
-        eventTitle.textContent = event.description;
-        
-        const eventType = document.createElement('p');
-        eventType.textContent = getEventTypeLabel(event.type);
-        
-        eventContent.appendChild(eventTitle);
-        eventContent.appendChild(eventType);
-        
-        eventDetail.appendChild(eventDot);
-        eventDetail.appendChild(eventContent);
-        
-        modalEvents.appendChild(eventDetail);
-    });
-    
+}
+
+function showModal(date, event) {
+    const modal = document.getElementById('eventModal');
+    document.getElementById('modalDate').textContent = date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+    document.getElementById('modalEvents').textContent = event.description;
     modal.classList.remove('hidden');
 }
 
-function hideEventModal() {
-    const modal = document.getElementById('eventModal');
-    if (modal) {
-        modal.classList.add('hidden');
-    }
-}
-
-function getEventTypeLabel(type) {
-    const labels = {
-        'school_break': 'School Break / No School',
-        'school_start': 'School Milestone',
-        'school_resume': 'School Milestone',
-        'school_end': 'Academic Milestone',
-        'semester': 'Academic Milestone',
-        'conference': 'School Event',
-        'elearning': 'School Event',
-        'federal_holiday': 'Federal Holiday'
+// Init
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('prevMonth').onclick = () => { currentMonth--; if (currentMonth < 0) { currentMonth = 11; currentYear--; } renderCalendar(); };
+    document.getElementById('nextMonth').onclick = () => { currentMonth++; if (currentMonth > 11) { currentMonth = 0; currentYear++; } renderCalendar(); };
+    
+    document.getElementById('goToToday').onclick = () => {
+        const today = new Date();
+        currentMonth = today.getMonth();
+        currentYear = today.getFullYear();
+        renderCalendar();
     };
-    return labels[type] || 'Event';
-}
 
-// Navigation functions
-function previousMonth() {
-    currentMonth--;
-    if (currentMonth < 0) {
-        currentMonth = 11;
-        currentYear--;
-    }
-    renderCalendar();
-}
-
-function nextMonth() {
-    currentMonth++;
-    if (currentMonth > 11) {
-        currentMonth = 0;
-        currentYear++;
-    }
-    renderCalendar();
-}
-
-// Initialize application
-document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM loaded, initializing calendar...');
-    
-    // Navigation buttons
-    const prevButton = document.getElementById('prevMonth');
-    const nextButton = document.getElementById('nextMonth');
-    
-    if (prevButton) {
-        prevButton.onclick = function(e) {
-            e.preventDefault();
-            previousMonth();
-        };
-        console.log('Previous button initialized');
-    }
-    
-    if (nextButton) {
-        nextButton.onclick = function(e) {
-            e.preventDefault();
-            nextMonth();
-        };
-        console.log('Next button initialized');
-    }
-    
-    // Modal close handlers
-    const modalClose = document.getElementById('modalClose');
-    const modalOverlay = document.getElementById('modalOverlay');
-    
-    if (modalClose) {
-        modalClose.onclick = function(e) {
-            e.preventDefault();
-            hideEventModal();
-        };
-    }
-    
-    if (modalOverlay) {
-        modalOverlay.onclick = function(e) {
-            e.preventDefault();
-            hideEventModal();
-        };
-    }
-    
-    // Keyboard navigation
-    document.onkeydown = function(e) {
-        if (e.key === 'Escape') {
-            hideEventModal();
-        } else if (e.key === 'ArrowLeft') {
-            previousMonth();
-        } else if (e.key === 'ArrowRight') {
-            nextMonth();
-        }
+    document.getElementById('togglePlanningMode').onclick = (e) => {
+        isPlanningMode = !isPlanningMode;
+        e.target.textContent = `Planning Mode: ${isPlanningMode ? 'On' : 'Off'}`;
+        document.querySelector('.minimal-grid-container').classList.toggle('planning-mode', isPlanningMode);
     };
-    
-    // Initialize calendar
+
+    document.getElementById('modalClose').onclick = () => document.getElementById('eventModal').classList.add('hidden');
+    document.getElementById('modalOverlay').onclick = () => document.getElementById('eventModal').classList.add('hidden');
+
     renderCalendar();
-    console.log('Calendar initialized');
 });

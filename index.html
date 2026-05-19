@@ -3,92 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IPSD 204 School Calendar 2026-2027</title>
+    <title>IPSD 204 School Calendar</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header class="calendar-header">
-            <h1>IPSD 204 School Calendar</h1>
-            <p class="school-year">2026-2027 School Year</p>
+    <main class="minimal-container">
+        <header class="minimal-header">
+            <h1 id="currentMonthYear">August 2026</h1>
+            <div class="minimal-nav">
+                <button id="goToToday" class="today-btn">Today</button>
+                <button id="prevMonth" aria-label="Previous Month">←</button>
+                <button id="nextMonth" aria-label="Next Month">→</button>
+            </div>
         </header>
 
-        <div class="calendar-controls">
-            <button class="btn btn--secondary" id="prevMonth">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="15 18 9 12 15 6"></polyline>
-                </svg>
-                Previous
-            </button>
-            
-            <div class="current-month-year">
-                <h2 id="currentMonthYear">August 2026</h2>
-            </div>
-            
-            <button class="btn btn--secondary" id="nextMonth">
-                Next
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <polyline points="9 18 15 12 9 6"></polyline>
-                </svg>
-            </button>
-        </div>
+        <section id="countdownSection" class="minimal-countdown">
+            <p id="nextBreakText">Loading next break…</p>
+        </section>
 
-        <div class="legend">
-            <h3>Legend</h3>
-            <div class="legend-items">
-                <div class="legend-item">
-                    <div class="legend-color school-break"></div>
-                    <span>School Breaks / No School</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color federal-holiday"></div>
-                    <span>Federal Holidays</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color school-event"></div>
-                    <span>School Events</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color school-milestone"></div>
-                    <span>School Milestones</span>
-                </div>
-                <div class="legend-item">
-                    <div class="legend-color academic-milestone"></div>
-                    <span>Academic Milestones</span>
-                </div>
+        <div class="minimal-grid-container">
+            <div class="minimal-grid">
+                <div class="minimal-day-header">S</div>
+                <div class="minimal-day-header">M</div>
+                <div class="minimal-day-header">T</div>
+                <div class="minimal-day-header">W</div>
+                <div class="minimal-day-header">T</div>
+                <div class="minimal-day-header">F</div>
+                <div class="minimal-day-header">S</div>
+                <div id="calendarDays" class="minimal-days-wrapper"></div>
             </div>
         </div>
 
-        <div class="calendar-container">
-            <div class="calendar-grid">
-                <div class="day-header">Sun</div>
-                <div class="day-header">Mon</div>
-                <div class="day-header">Tue</div>
-                <div class="day-header">Wed</div>
-                <div class="day-header">Thu</div>
-                <div class="day-header">Fri</div>
-                <div class="day-header">Sat</div>
-                <div id="calendarDays"></div>
-            </div>
-        </div>
+        <footer class="minimal-footer">
+            <button id="togglePlanningMode" class="minimal-btn">Planning Mode: Off</button>
+        </footer>
+    </main>
 
-        <!-- Event details modal -->
-        <div class="modal hidden" id="eventModal">
-            <div class="modal-overlay" id="modalOverlay"></div>
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3 id="modalDate">Event Details</h3>
-                    <button class="modal-close" id="modalClose">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <line x1="18" y1="6" x2="6" y2="18"></line>
-                            <line x1="6" y1="6" x2="18" y2="18"></line>
-                        </svg>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div id="modalEvents"></div>
-                </div>
-            </div>
+    <!-- Simple Event Modal -->
+    <div class="modal hidden" id="eventModal">
+        <div class="modal-overlay" id="modalOverlay"></div>
+        <div class="modal-content">
+            <h2 id="modalDate"></h2>
+            <div id="modalEvents"></div>
+            <button id="modalClose" class="minimal-btn">Close</button>
         </div>
     </div>
 
